@@ -28,7 +28,7 @@ If you want to include some output (like the last line of your experiment log):
 # Run experiment, saving a copy of data sent to stdout to output.txt:
 ./run_my_experiment.sh | tee output.txt
 # Get up to 80 characters of the last line:
-puuuush "Experiment Completed" $(tail -n1 output.txt | cut -c 1-80)
+puuuush "Experiment Completed" "$(tail -n1 output.txt | cut -c 1-80)"
 ```
 
 If you've already started an experiment and want to send a notification when it terminates, you can do that. Get the pid (using `ps aux`, `pidof`, `top`, etc.) and then run this:
